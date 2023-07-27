@@ -8,5 +8,12 @@ public class Mainline {
         if (bag.Contains(10)) {
             Console.WriteLine("Bag contains 10");
         }
+        for (int i = 0; i < 10; i++) {
+            bag.Insert(i*3);
+        }
+        foreach (var item in bag) {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine($"Bag size: {bag.Size}");
     }
 }

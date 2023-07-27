@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections;
 
-public class Bag<T> where T : IComparable {
+public class Bag<T>: IEnumerable where T : IComparable {
     private int size = 0;
+    public int Size {
+        get {
+            return this.size;
+        }
+    }
     private int capacity = 10;
     private T[] data;
 
@@ -24,6 +30,20 @@ public class Bag<T> where T : IComparable {
             }
         }
         return false;
+    }
+
+    public bool IsEmpty() {
+        return size == 0;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() {
+        return this.GetEnumerator();
+    }
+
+    public IEnumerator GetEnumerator() {
+        for (int i = 0; i < size; i++) {
+            yield return this.data[i];
+        }
     }
 
 
