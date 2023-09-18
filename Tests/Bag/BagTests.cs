@@ -3,7 +3,7 @@ using System.Collections;
 using Xunit;
 using DataStructures;
 
-namespace DataStructures.Test;
+namespace Tests;
 
 public class BagTests {
     [Fact]
