@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
 using Xunit;
 using DataStructures;
 
 namespace Tests;
-
 public class QueueTests {
     [Fact]
     public static void TestEnqueueEnqueueNumberReturnTrue() {
