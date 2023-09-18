@@ -61,4 +61,15 @@ public class BagTests {
         bag.Insert(0);
         Assert.False(bag.IsEmpty());
     }
+
+    [Fact]
+    public static void TestInsert20ItemsReturnTrue() {
+        Bag<int> bag = new Bag<int>();
+
+        for (int i = 0; i < 20; i++) {
+            bag.Insert(i);
+        }
+
+        Assert.Equal(bag.Size, 20);
+    }
 }

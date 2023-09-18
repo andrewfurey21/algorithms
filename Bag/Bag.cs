@@ -19,7 +19,8 @@ public class Bag<T>: IEnumerable where T : IComparable {
     public void Insert(T item) {
         size++;
         if (size > capacity) {
-            Array.Resize(ref this.data, capacity * 2);
+            capacity *= 2;
+            Array.Resize(ref this.data, capacity);
         }
         this.data[size-1] = item;
     }
