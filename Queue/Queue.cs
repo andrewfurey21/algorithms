@@ -37,4 +37,8 @@ public class Queue<T> {
         tail.next = new Node();
         tail = tail.next;
     }
+
+    public bool IsEmpty() {
+        return size == 0;
+    }
 }

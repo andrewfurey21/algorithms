@@ -51,4 +51,20 @@ public class QueueTests {
         Assert.Equal(3, queue.Size);
     }
 
+    [Fact]
+    public static void TestIsEmptyEnqueueNumberReturnFalse() {
+        Queue<int> queue = new Queue<int>();
+
+        queue.Enqueue(0);
+
+        Assert.False(queue.IsEmpty());
+    }
+
+
+    [Fact]
+    public static void TestIsEmptyReturnTrue() {
+        Queue<int> queue = new Queue<int>();
+        Assert.True(queue.IsEmpty());
+    }
+
 }
