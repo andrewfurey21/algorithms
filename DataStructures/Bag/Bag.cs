@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections;
 
+namespace DataStructures;
 public class Bag<T>: IEnumerable where T : IComparable {
     private int size = 0;
     public int Size {
