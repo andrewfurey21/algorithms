@@ -7,11 +7,58 @@ namespace DataStructures.Test;
 
 public class BagTests {
     [Fact]
-    public static void TestInsert() {
+    public static void TestInsertInsert0ReturnTrue() {
         Bag<int> bag = new Bag<int>();
 
         bag.Insert(0);
 
         Assert.True(bag.Contains(0), "The bag should contain 0");
+    }
+
+    [Fact]
+    public static void TestContainsInsertMultipleNumberReturnTrue() {
+        Bag<int> bag = new Bag<int>();
+
+        bag.Insert(0);
+        bag.Insert(1);
+        bag.Insert(2);
+        bag.Insert(3);
+        bag.Insert(4);
+        bag.Insert(5);
+
+        Assert.True(bag.Contains(3), "The bag should contain 0");
+    }
+
+    [Fact]
+    public static void TestSizeInsert5NumbersReturn5(){
+
+        Bag<int> bag = new Bag<int>();
+
+        bag.Insert(0);
+        bag.Insert(1);
+        bag.Insert(2);
+        bag.Insert(3);
+        bag.Insert(4);
+
+        Assert.Equal(bag.Size, 5);
+    }
+
+    [Fact]
+    public static void TestSizeInsertNoneReturn0() {
+        Bag<int> bag = new Bag<int>();
+        Assert.Equal(bag.Size, 0);
+    }
+
+    [Fact]
+    public static void TestIsEmptyInsertNoneReturnTrue() {
+       Bag<int> bag = new Bag<int>();
+       Assert.True(bag.IsEmpty());
+    }
+
+    [Fact]
+    public static void TestIsEmptyInsertOneReturnFalse() {
+        Bag<int> bag = new Bag<int>();
+        bag.Insert(0);
+        Assert.False(bag.IsEmpty());
     }
 }
