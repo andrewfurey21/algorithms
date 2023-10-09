@@ -56,7 +56,7 @@ public class BagTests {
     }
 
     [Fact]
-    public static void TestIsEmptyInsertOneReturnFalse() {
+    public static void TestIsEmptyInsertZeroReturnFalse() {
         Bag<int> bag = new Bag<int>();
         bag.Insert(0);
         Assert.False(bag.IsEmpty());
