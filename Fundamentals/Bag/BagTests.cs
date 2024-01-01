@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using Xunit;
-using DataStructures;
+using Fundamentals;
 
-namespace Tests;
-
+namespace FundamentalsTests;
 public class BagTests {
     [Fact]
     public static void TestInsertInsert0ReturnTrue() {

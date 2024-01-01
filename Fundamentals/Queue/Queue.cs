@@ -1,10 +1,12 @@
-using System;
+//using System;
 
+namespace Fundamentals;
 public class Queue<T> {
     private class Node {
         public T data;
         public Node next;
     }
+
     private int size = 0;
     public int Size {
         get {
@@ -14,7 +16,6 @@ public class Queue<T> {
 
     private Node head;
     private Node tail;
-
 
     public Queue() {
         tail = new Node();

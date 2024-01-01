@@ -1,5 +1,6 @@
+using System;
 
-namespace DataStructures;
+namespace Fundamentals;
 public class StackArray<T> {
     private T[] data;
 

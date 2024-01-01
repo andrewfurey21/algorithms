@@ -1,7 +1,7 @@
 using Xunit;
-using DataStructures;
+using Fundamentals;
 
-namespace Tests;
+namespace FundamentalsTests;
 public class StackTests {
     [Fact]
     public static void TestIsEmptyReturnTrue() {

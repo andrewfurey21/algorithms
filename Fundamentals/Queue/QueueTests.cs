@@ -1,11 +1,11 @@
 using Xunit;
-using DataStructures;
+using Fundamentals;
 
-namespace Tests;
+namespace FundamentalsTests;
 public class QueueTests {
     [Fact]
     public static void TestEnqueueEnqueueNumberReturnTrue() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
 
         queue.Enqueue(0);
 
@@ -14,7 +14,7 @@ public class QueueTests {
 
     [Fact]
     public static void TestMultipleEnqueueReturnTrue() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
 
         queue.Enqueue(0);
         queue.Enqueue(1);
@@ -25,7 +25,7 @@ public class QueueTests {
 
     [Fact]
     public static void TestMultipleDequeueReturnTrue() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
 
         queue.Enqueue(0);
         queue.Enqueue(1);
@@ -39,7 +39,7 @@ public class QueueTests {
 
     [Fact]
     public static void TestSizeEnqueue3NumbersReturn3() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
 
         queue.Enqueue(0);
         queue.Enqueue(0);
@@ -50,7 +50,7 @@ public class QueueTests {
 
     [Fact]
     public static void TestIsEmptyEnqueueNumberReturnFalse() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
 
         queue.Enqueue(0);
 
@@ -60,7 +60,7 @@ public class QueueTests {
 
     [Fact]
     public static void TestIsEmptyReturnTrue() {
-        Queue<int> queue = new Queue<int>();
+        Fundamentals.Queue<int> queue = new Fundamentals.Queue<int>();
         Assert.True(queue.IsEmpty());
     }
 
