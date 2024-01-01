@@ -5,9 +5,9 @@ This is a repo of all the algorithms and data structures from the book Algoritms
 ### Agenda
 
 1. Fundamentals
-   - [ ] Bags
-   - [ ] Queues
-   - [ ] Stacks
+   - [x] Bags
+   - [x] Queues
+   - [x] Stacks
    - [ ] Timer
    - [ ] Tests
    - [ ] Compare
