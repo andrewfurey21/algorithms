@@ -12,7 +12,6 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [ ] Quick Find
    - [ ] Quick Union
    - [ ] Weighted Quick Union
-   - [ ] Weighted Quick Union with path compression
 2. Sorting
    - [ ] Selection Sort
    - [ ] Insertion Sort
