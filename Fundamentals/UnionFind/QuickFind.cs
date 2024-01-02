@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 
 namespace Fundamentals;
-public class UnionFind {
-    public UnionFind(int numberOfSites) {
+public class QuickFind {
+    public QuickFind(int numberOfSites) {
 
     }
 
@@ -20,7 +20,7 @@ public class UnionFind {
 
     //Check if p and q are connected
     public Boolean Connected(int p, int q) {
-        return default(Boolean);
+        return Find(p) == Find(q);
     }
 
     //Find number of components
