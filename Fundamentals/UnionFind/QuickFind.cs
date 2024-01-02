@@ -1,13 +1,14 @@
-using System;
-using System.Collections;
-
 namespace Fundamentals;
 public class QuickFind {
     private int[] id;
     private int numberOfComponents;
+
     public QuickFind(int numberOfSites) {
-        int[] id = new int[numberOfSites];
+        id = new int[numberOfSites];
         this.numberOfComponents = numberOfSites;
+        for (int i = 0; i < numberOfComponents; i++) {
+            id[i] = i;
+        }
     }
 
     // Add a connection between p and q
@@ -25,7 +26,7 @@ public class QuickFind {
         numberOfComponents--;
     }
 
-    //Component identifier for p
+    //Component identifier for p (id number)
     public int Find(int p) {
         return id[p];
     }

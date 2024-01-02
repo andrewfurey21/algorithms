@@ -1,10 +1,10 @@
 namespace Fundamentals;
-public class WeightedQuickUnion {
+public class WeightedQuickUnionPathCompression {
     private int[] id;
     private int numberOfComponents;
     private int[] sizes;
 
-    public WeightedQuickUnion(int numberOfSites) {
+    public WeightedQuickUnionPathCompression(int numberOfSites) {
         id = new int[numberOfSites];
         sizes = new int[numberOfSites];
         numberOfComponents = numberOfSites;
@@ -36,9 +36,15 @@ public class WeightedQuickUnion {
 
     //Component identifier for p
     public int Find(int p) {
+        Fundamentals.Stack<int> nodesEncountered = new Fundamentals.Stack<int>();
         int currentSite = p;
         while (currentSite != id[currentSite]) {
             currentSite = id[currentSite];
+            nodesEncountered.Push(currentSite);
+        }
+
+        while (!nodesEncountered.IsEmpty()) {
+            id[nodesEncountered.Pop()] = currentSite;
         }
         return currentSite;
     }
