@@ -1,7 +1,7 @@
 using System;
 
 namespace Fundamentals;
-public class StackArray<T> {
+public class Stack<T> {
     private T[] data;
 
     private int size = 0;
@@ -12,7 +12,7 @@ public class StackArray<T> {
         }
     }
 
-    public StackArray() {
+    public Stack() {
         data = new T[capacity];
     }
 
