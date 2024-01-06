@@ -10,7 +10,7 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [x] Stacks
    - [x] Quick Find
    - [x] Quick Union
-   - [ ] Weighted Quick Union
+   - [x] Weighted Quick Union
    - [ ] Weighted Quick Union with path compression
 2. Sorting
    - [ ] Selection Sort
