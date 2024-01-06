@@ -101,14 +101,24 @@ public class WQUPathCompressionTest {
     }
 
     [Fact]
-    public static void TestFindLength5Return2() {
+    public static void TestHeightLength5Return2() {
         WeightedQuickUnionPathCompression wqu = new WeightedQuickUnionPathCompression(5);
         wqu.Union(0, 1);
         wqu.Union(2, 3);
         wqu.Union(2, 4);
-        wqu.Union(2, 1);
+        wqu.Union(2, 1);//compresses 1
 
+        Assert.Equal(2, wqu.MaxHeight());
+    }
 
-        Assert.Equal(2, wqu.Find(0));
+    [Fact]
+    public static void TestHeightLength5Return3() {
+        WeightedQuickUnionPathCompression wqu = new WeightedQuickUnionPathCompression(5);
+        wqu.Union(0, 1);
+        wqu.Union(2, 3);
+        wqu.Union(2, 4);
+        wqu.Union(2, 0);//doesnt compress 1
+
+        Assert.Equal(3, wqu.MaxHeight());
     }
 }
