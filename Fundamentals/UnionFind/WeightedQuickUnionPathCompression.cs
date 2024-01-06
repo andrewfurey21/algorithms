@@ -14,7 +14,7 @@ public class WeightedQuickUnionPathCompression {
         }
     }
 
-    // Add a connection between p and q
+    // Add a connection at p from q
     public void Union(int p, int q) {
         int pRoot = Find(p);
         int qRoot = Find(q);
@@ -57,5 +57,22 @@ public class WeightedQuickUnionPathCompression {
     //Find number of components
     public int Count() {
         return numberOfComponents;
+    }
+
+    //Find max height of tree
+    public int MaxHeight() {
+        int maxHeight = 1;
+        for (int i = 0; i < id.Length; i++) {
+            int currentSite = i;
+            int currentHeight = 1;
+            while (currentSite != id[currentSite]) {
+                currentHeight++;
+                currentSite = id[currentSite];
+            }
+            if (currentHeight > maxHeight) {
+                maxHeight = currentHeight;
+            }
+        }
+        return maxHeight;
     }
 }

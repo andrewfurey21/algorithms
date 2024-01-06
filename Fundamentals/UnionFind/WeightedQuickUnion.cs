@@ -52,4 +52,21 @@ public class WeightedQuickUnion {
     public int Count() {
         return numberOfComponents;
     }
+
+    //Find max height of tree [2, 0, 2, 2, 2]
+    public int MaxHeight() {
+        int maxHeight = 1;
+        for (int i = 0; i < id.Length; i++) {
+            int currentSite = i;
+            int currentHeight = 1;
+            while (currentSite != id[currentSite]) {
+                currentHeight++;
+                currentSite = id[currentSite];
+            }
+            if (currentHeight > maxHeight) {
+                maxHeight = currentHeight;
+            }
+        }
+        return maxHeight;
+    }
 }
