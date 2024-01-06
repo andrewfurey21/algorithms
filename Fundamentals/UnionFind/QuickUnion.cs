@@ -14,13 +14,13 @@ public class QuickUnion {
     // Add a connection between p and q
     public void Union(int p, int q) {
         int pRoot = Find(p);
-        int qRoot = Find(p);
+        int qRoot = Find(q);
 
         if (pRoot != qRoot ) {
             id[qRoot] = pRoot;
+            numberOfComponents--;
         }
 
-        numberOfComponents--;
     }
 
     //Component identifier for p (root)
