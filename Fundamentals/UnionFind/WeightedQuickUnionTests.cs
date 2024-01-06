@@ -2,17 +2,16 @@ using Xunit;
 using Fundamentals;
 
 namespace FundamentalsTests;
-public class WeightedWquickUnionTests{
+public class WeightedQuickUnionTests{
     [Fact]
-    public static void TestUnionLength10Return5Components() {
-        WeightedQuickUnion wqu = new WeightedQuickUnion(10);
+    public static void TestHeightLength5Return2() {
+        WeightedQuickUnion wqu = new WeightedQuickUnion(5);
         wqu.Union(0, 1);
         wqu.Union(2, 3);
-        wqu.Union(4, 5);
-        wqu.Union(6, 7);
-        wqu.Union(8, 9);
+        wqu.Union(2, 4);
+        wqu.Union(2, 1);
 
-        Assert.Equal(5, wqu.Count());
+        Assert.Equal(3, wqu.MaxHeight());
     }
 
     [Fact]
