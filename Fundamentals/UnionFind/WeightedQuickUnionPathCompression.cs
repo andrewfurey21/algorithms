@@ -17,21 +17,21 @@ public class WeightedQuickUnionPathCompression {
     // Add a connection between p and q
     public void Union(int p, int q) {
         int pRoot = Find(p);
-        int qRoot = Find(p);
+        int qRoot = Find(q);
 
         if (pRoot != qRoot) {
             int pSize = sizes[pRoot];
             int qSize = sizes[qRoot];
 
-            if (pSize <= qSize) {
+            if (pSize < qSize) {
                 id[pRoot] = qRoot;
                 sizes[qRoot] += sizes[pRoot];
             } else {
                 id[qRoot] = pRoot;
                 sizes[pRoot] += sizes[pRoot];
             }
+            numberOfComponents--;
         }
-        numberOfComponents--;
     }
 
     //Component identifier for p
@@ -39,8 +39,8 @@ public class WeightedQuickUnionPathCompression {
         Fundamentals.Stack<int> nodesEncountered = new Fundamentals.Stack<int>();
         int currentSite = p;
         while (currentSite != id[currentSite]) {
-            currentSite = id[currentSite];
             nodesEncountered.Push(currentSite);
+            currentSite = id[currentSite];
         }
 
         while (!nodesEncountered.IsEmpty()) {
