@@ -22,8 +22,8 @@ public class QuickFind {
                     id[i] = idP;
                 }
             }
+            numberOfComponents--;
         }
-        numberOfComponents--;
     }
 
     //Component identifier for p (id number)
