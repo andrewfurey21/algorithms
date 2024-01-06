@@ -37,13 +37,13 @@ public class BagTests {
         bag.Insert(3);
         bag.Insert(4);
 
-        Assert.Equal(bag.Size, 5);
+        Assert.Equal(5, bag.Size);
     }
 
     [Fact]
     public static void TestSizeInsertNoneReturn0() {
         Bag<int> bag = new Bag<int>();
-        Assert.Equal(bag.Size, 0);
+        Assert.Equal(0, bag.Size);
     }
 
     [Fact]
@@ -67,6 +67,6 @@ public class BagTests {
             bag.Insert(i);
         }
 
-        Assert.Equal(bag.Size, 20);
+        Assert.Equal(20, bag.Size);
     }
 }

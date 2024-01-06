@@ -20,7 +20,7 @@ public class StackTests {
     public static void TestPopInsertNumberReturnNumber() {
         Fundamentals.Stack<int> stack = new Fundamentals.Stack<int>();
         stack.Push(0);
-        Assert.Equal(stack.Pop(), 0);
+        Assert.Equal(0, stack.Pop());
     }
 
     [Fact]
@@ -30,7 +30,7 @@ public class StackTests {
         stack.Push(1);
         stack.Push(2);
 
-        Assert.Equal(stack.Pop(), 2);
+        Assert.Equal(2, stack.Pop());
     }
 
     [Fact]
@@ -40,6 +40,6 @@ public class StackTests {
         for (int i = 0; i < 20; i++) {
             stack.Push(i);
         }
-        Assert.Equal(stack.Pop(), 19);
+        Assert.Equal(19, stack.Pop());
     }
 }
