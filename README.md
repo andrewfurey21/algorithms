@@ -8,10 +8,10 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [x] Bags
    - [x] Queues
    - [x] Stacks
-   - [ ] Union Find
-   - [ ] Quick Find
-   - [ ] Quick Union
+   - [x] Quick Find
+   - [x] Quick Union
    - [ ] Weighted Quick Union
+   - [ ] Weighted Quick Union with path compression
 2. Sorting
    - [ ] Selection Sort
    - [ ] Insertion Sort
