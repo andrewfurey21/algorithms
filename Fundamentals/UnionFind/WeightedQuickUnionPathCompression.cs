@@ -32,19 +32,25 @@ public class WeightedQuickUnionPathCompression {
             }
             numberOfComponents--;
         }
+        Find(q);//compress paths, there probably a better way, but this is quick
+        Find(p);
     }
 
     //Component identifier for p
     public int Find(int p) {
         Fundamentals.Stack<int> nodesEncountered = new Fundamentals.Stack<int>();
         int currentSite = p;
+        nodesEncountered.Push(currentSite);
         while (currentSite != id[currentSite]) {
-            nodesEncountered.Push(currentSite);
             currentSite = id[currentSite];
+            nodesEncountered.Push(currentSite);
         }
 
+        nodesEncountered.Pop();
         while (!nodesEncountered.IsEmpty()) {
-            id[nodesEncountered.Pop()] = currentSite;
+            int node = nodesEncountered.Pop();
+            sizes[node] = 1;
+            id[node] = currentSite;
         }
         return currentSite;
     }
