@@ -1,7 +1,7 @@
 namespace Sorting;
 public class QuickSort {
     public static int[] Sort(int[] arr) {
-        return arr;
+        return Sort(arr, 0, arr.Length-1);
     }
 
     public static int[] Sort(int[] arr, int lowIndex, int highIndex) {
@@ -15,6 +15,24 @@ public class QuickSort {
     }
 
     public static int Partition(int[] arr, int lowIndex, int highIndex) {
-        return 0;
+        int pivotPointer = lowIndex;
+        int highPointer = highIndex;
+        for (int i = lowIndex + 1; i <= highPointer && highPointer >= pivotPointer; i++) {
+            if (arr[pivotPointer] > arr[i]) {
+                Swap(arr, pivotPointer, i);
+                pivotPointer++;
+            } else {
+                Swap(arr, i, highPointer);
+                highPointer--;
+                i--;
+            }
+        }
+        return pivotPointer;
+    }
+
+    private static void Swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }

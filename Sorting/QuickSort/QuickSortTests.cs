@@ -24,6 +24,12 @@ public class QuickSortTests {
     }
 
     [Fact]
+    public static void SortArrayLength10() {
+        int[] expected = {-19, -10, 1, 1, 4, 5, 6, 6, 7, 8, 9, 9, 12, 23};
+        Assert.Equal(expected, QuickSort.Sort(new int[] {4, 23, 6, 1, 9, 7, -19, -10, 8, 6, 5, 9, 1, 12}));
+    }
+
+    [Fact]
     public static void SortArrayLength0Every0Element() {
         int[] expected = {};
         Assert.Equal(expected, QuickSort.Sort(new int[] {}));
