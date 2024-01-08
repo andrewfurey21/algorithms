@@ -18,30 +18,39 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [x] Shell Sort
    - [x] Top Down Merge sort
    - [ ] Bottom Up Merge Sort
-   - [ ] In Place Merge
+   - [ ] In Place Merge (that is O(n log n) time)
    - [ ] Quick Sort
    - [ ] Binary Heap
    - [ ] Heap Sort
    - [ ] Priority Queues
 3. Searching
-   - [ ] Symbol Tables
-   - [ ] Binary Search Trees
-   - [ ] Balanced BSTs
-   - [ ] Hash Tables
-   - [ ] Applications: Sparse Vectors
+   - [ ] Sequential Search
+   - [ ] Binary Search
+   - [ ] Binary Tree Search
+   - [ ] Red-Black BST
+   - [ ] Hashing with seperate chaining
+   - [ ] Hashing with linear probing
+   - [ ] Applications: Sparse Vectors with dot product
 4. Graphs
-   - [ ] Undirected Graphs
-   - [ ] Directed Graphs
-   - [ ] Minimum Spanning trees
-   - [ ] Shortest Paths
+   - [ ] Depth First search
+   - [ ] Breadth first search
+   - [ ] Top Sort
+   - [ ] Prim's Algorithm
+   - [ ] Kruskals Algorithm
+   - [ ] Dijkstra's Algorithm
+   - [ ] Bellman Ford Algorithm
 5. Strings
-   - [ ] String sorts
-   - [ ] Tries
+   - [ ] LSD string sort
+   - [ ] MSD string sort
+   - [ ] Three-way string quicksort
+   - [ ] Trie symbol table
+   - [ ] TST symbol table
    - [ ] Substring search
-   - [ ] Regular Expressions
-   - [ ] Data Compression
+   - [ ] Regular Expression pattern matching
+   - [ ] Huffman Compression/Expansion
+   - [ ] LZW Compression/Expansion
 6. Context
    - [ ] B-trees
-   - [ ] Suffix Arrays
-   - [ ] Network Flow
+7. Extras
+   - [ ] Longest common subsequence problem
    
