@@ -19,7 +19,8 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [x] Top Down Merge sort
    - [ ] Bottom Up Merge Sort
    - [ ] In Place Merge (that is O(n log n) time)
-   - [ ] Quick Sort
+   - [x] Quick Sort
+   - [ ] Quick sort with 3-way partitioning
    - [ ] Binary Heap
    - [ ] Heap Sort
    - [ ] Priority Queues
