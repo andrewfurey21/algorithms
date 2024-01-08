@@ -1,10 +1,17 @@
 namespace Sorting;
 public class TopDownMergeSort {
     public static int[] Sort(int[] arr) {
-        return Sort(arr, 0, arr.Length);
+        return Sort(arr, 0, arr.Length-1);
     }
 
     public static int[] Sort(int[] arr, int lowIndex, int highIndex) {
+        if (highIndex <= lowIndex) {
+            return arr;
+        }
+        int midIndex = lowIndex + (highIndex - lowIndex) / 2;//3, 5
+        Sort(arr, lowIndex, midIndex);
+        Sort(arr, midIndex+1, highIndex);
+        Merge(arr, lowIndex, midIndex, highIndex);
         return arr;
     }
 
@@ -18,10 +25,10 @@ public class TopDownMergeSort {
         }
 
         for (int i = lowIndex; i <= highIndex; i++) {
-            if (lowPointer > midIndex) {//0>0?no
+            if (lowPointer > (midIndex-lowIndex)) {
                 arr[i] = arrCopy[highPointer];
                 highPointer++;
-            } else if (highPointer >= arrCopy.Length) {//1>1?no
+            } else if (highPointer >= arrCopy.Length) {
                 arr[i] = arrCopy[lowPointer];
                 lowPointer++;
             } else if (arrCopy[lowPointer] < arrCopy[highPointer]) {
@@ -35,11 +42,4 @@ public class TopDownMergeSort {
         }
         return arr;
     }
-
-
-   //public static void Swap(int[] arr, int first, int second) {
-   //     int temp = arr[first];
-   //     arr[first] = arr[second];
-   //     arr[second] = temp;
-   // }
 }
