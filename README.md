@@ -15,8 +15,10 @@ This is a repo of all the algorithms and data structures from the book Algoritms
 2. Sorting
    - [x] Selection Sort
    - [x] Insertion Sort
-   - [ ] Shell Sort
-   - [ ] Merge sort (variants)
+   - [x] Shell Sort
+   - [x] Top Down Merge sort
+   - [ ] Bottom Up Merge Sort
+   - [ ] In Place Merge
    - [ ] Quick Sort
    - [ ] Binary Heap
    - [ ] Heap Sort
