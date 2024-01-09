@@ -21,9 +21,9 @@ This is a repo of all the algorithms and data structures from the book Algoritms
    - [ ] In Place Merge (that is O(n log n) time)
    - [x] Quick Sort
    - [ ] Quick sort with 3-way partitioning
-   - [ ] Binary Heap
-   - [ ] Heap Sort
-   - [ ] Priority Queues
+   - [x] Binary Heap
+   - [x] Heap Sort
+   - [x] Priority Queues
 3. Searching
    - [ ] Sequential Search
    - [ ] Binary Search
