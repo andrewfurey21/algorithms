@@ -17,6 +17,9 @@ public class PriorityQueue {
     }
 
     public int Pop() {
+        if (Size <= 0) {
+            throw new InvalidOperationException("Cannot pop from empty queue.");
+        }
         int data = heap[0];
         Swap(0, heap.Count()-1);
         heap.RemoveAt(heap.Count()-1);
@@ -31,14 +34,14 @@ public class PriorityQueue {
     public void Sink(int index) {
         int current = index;
         while (current < Size) {
-            int child1 = current*2+1;
-            int child2 = current*2+2;
-            if (child1 < Size && heap[current] < heap[child1]) {
-                Swap(current, child1);
-                current = child1;
-            } else if (child2 < Size && heap[current] < heap[child2]) {
-                Swap(current, child2);
-                current = child2;
+            int child = current*2+1;
+            if (child < Size - 1 && heap[child] < heap[child+1]) {
+                child++;
+            }
+
+            if (child < Size && heap[current] < heap[child]) {
+                Swap(current, child);
+                current = child;
             } else break;
         }
     }
@@ -46,10 +49,7 @@ public class PriorityQueue {
     public void Swim(int index) {
         int current = index;
         int parent = getParent(index);
-        while (current > 0) {
-            if (heap[current] < heap[parent]) {
-                break;
-            }
+        while (current > 0 && heap[current] > heap[parent]) {
             Swap(current, parent);
             current = parent;
             parent = getParent(current);
