@@ -35,11 +35,11 @@ public class PriorityQueue {
         int current = index;
         while (current < Size) {
             int child = current*2+1;
-            if (child < Size - 1 && heap[child] < heap[child+1]) {
+            if (child < Size - 1 && heap[child] > heap[child+1]) {
                 child++;
             }
 
-            if (child < Size && heap[current] < heap[child]) {
+            if (child < Size && heap[current] > heap[child]) {
                 Swap(current, child);
                 current = child;
             } else break;
@@ -49,7 +49,7 @@ public class PriorityQueue {
     public void Swim(int index) {
         int current = index;
         int parent = getParent(index);
-        while (current > 0 && heap[current] > heap[parent]) {
+        while (current > 0 && heap[current] < heap[parent]) {
             Swap(current, parent);
             current = parent;
             parent = getParent(current);
@@ -61,7 +61,7 @@ public class PriorityQueue {
         return index % 2 == 0 ? index / 2 - 1 : index / 2;
     }
 
-    public void Swap(int firstIndex, int secondIndex) {
+    private void Swap(int firstIndex, int secondIndex) {
         int temp = heap[firstIndex];
         heap[firstIndex] = heap[secondIndex];
         heap[secondIndex] = temp;
