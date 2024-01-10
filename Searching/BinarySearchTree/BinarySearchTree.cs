@@ -16,6 +16,9 @@ public class BinarySearchTree<K, V> where K: IComparable {
             get {
                 return this.val;
             }
+            set {
+                val = value;
+            }
         }
         public Node? leftLink;
         public Node? rightLink;
@@ -42,27 +45,47 @@ public class BinarySearchTree<K, V> where K: IComparable {
     public void Put(K key, V val) {
         if (root == null) {
             root = new Node(key, val);
+            size++;
             return;
         }
 
         Node? currentNode = root;
+        Node? prevNode = null;
+        bool left = false;
         while (currentNode != null) {
-            if (currentNode.Key.CompareTo(key) < 0) {
+            if (currentNode.Key.CompareTo(key) > 0) {
+                prevNode = currentNode;
                 currentNode = currentNode.leftLink;
-            } else if (currentNode.Key.CompareTo(key) > 0) {
+                left = true;
+            } else if (currentNode.Key.CompareTo(key) < 0) {
+                prevNode = currentNode;
                 currentNode = currentNode.rightLink;
-            } else return;
+                left = false;
+            } else {
+                currentNode.Val = val;
+                return;
+            }
         }
 
-        if (currentNode == null) {
-            currentNode = new Node(key, val);
+        if (left) {
+            prevNode.leftLink = new Node(key, val);
+        } else {
+            prevNode.rightLink= new Node(key, val);
         }
+        size++;
     }
 
-    private int CalculateSize(Node? node) {
-        if (node == null) {
-            return 0;
-        } else return 1 + CalculateSize(node.leftLink) + CalculateSize(node.rightLink);
+    public override String ToString() {
+        return Stringify(root);
+    }
+
+    private String Stringify(Node? n) {
+        if (n == null) return "(null)";
+        else {
+            String left = Stringify(n.leftLink);
+            String right= Stringify(n.rightLink);
+            return String.Format("({0}, {1}), {2}, {3}", n.Key, n.Val, left, right);
+        }
     }
 
     //min, max, delete
