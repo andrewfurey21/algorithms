@@ -1,5 +1,7 @@
 namespace Searching;
-public class BinarySearchTree<K, V> where K: IComparable {
+public class BinarySearchTree<K, V>
+    where K: struct, IComparable
+    where V: struct {
 
     private Node? root = null;
     private int size = 0;
@@ -38,9 +40,19 @@ public class BinarySearchTree<K, V> where K: IComparable {
 
     public BinarySearchTree() {}
 
-    //public V Get(K key) {
-
-    //}
+    public V? Get(K key) {
+        Node? currentNode = root;
+        while (currentNode != null) {
+            if (currentNode.Key.CompareTo(key) > 0) {
+                currentNode = currentNode.leftLink;
+            } else if (currentNode.Key.CompareTo(key) < 0) {
+                currentNode = currentNode.rightLink;
+            } else {
+                return currentNode.Val;
+            }
+        }
+        return null;
+    }
 
     public void Put(K key, V val) {
         if (root == null) {
